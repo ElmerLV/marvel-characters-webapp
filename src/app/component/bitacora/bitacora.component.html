@@ -1,0 +1,32 @@
+<div class="container-fluid mb-3">
+    <h2 class="h3 text-center text-capitalize">Administración de Bitacora</h2>
+    <hr>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered bg-blue">
+            <caption>Bitacora</caption>
+            <thead>
+                <tr>
+                    <th scope="col" class="text-center text-uppercase">Clave</th>
+                    <th scope="col" class="text-center text-uppercase">Ruta</th>
+                    <th scope="col" class="text-center text-uppercase">Fecha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngIf="logbooks.length === 0">
+                    <td colspan="9" class="text-center">No hay Bitacora Disponibles</td>
+                </tr>
+                <tr *ngFor="let logbook of logbooks | slice: (page-1) * pageSize : page * pageSize">
+                    <td class="text-center">{{logbook.id}}</td>
+                    <td class="text-center">{{logbook.basePath}}</td>
+                    <td class="text-center">{{logbook.horaConsulta}}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="10">Total: {{logbooks.length}}</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <ngb-pagination class="d-flex justify-content-center font-weight-bold" [(page)]="page" [pageSize]="pageSize" [collectionSize]="logbooks.length"></ngb-pagination>
+</div>
