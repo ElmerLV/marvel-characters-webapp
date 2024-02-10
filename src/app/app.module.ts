@@ -12,6 +12,7 @@ import { CharacterComponent } from './component/character/character.component';
 import { BitacoraComponent } from './component/bitacora/bitacora.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HttpInterceptorService } from './interceptors/HttpInterceptorService';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HttpInterceptorService } from './interceptors/HttpInterceptorService';
     NgxUiLoaderModule,
     NgxUiLoaderHttpModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [
     {

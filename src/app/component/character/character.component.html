@@ -1,1 +1,33 @@
-<p>character works!</p>
+<div class="container-fluid mb-3">
+  <h2 class="h3 text-center text-capitalize">Administración de Personajes</h2>
+  <hr>
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered bg-blue">
+      <caption>Personajes</caption>
+      <thead>
+      <tr>
+        <th scope="col" class="text-center text-uppercase"></th>
+        <th scope="col" class="text-center text-uppercase">Id</th>
+        <th scope="col" class="text-center text-uppercase">Name</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngIf="characters.length === 0">
+        <td colspan="9" class="text-center">No hay Personajes Disponibles</td>
+      </tr>
+      <tr *ngFor="let character of characters | slice: (page-1) * pageSize : page * pageSize" >
+        <td class="text-center">
+          <img src={{character.image}} width="50" height="50">
+        </td>        <td class="text-center">{{character.id}}</td>
+        <td class="text-center">{{character.name}}</td>
+      </tr>
+      </tbody>
+      <tfoot>
+      <tr>
+        <td colspan="10">Total: {{characters.length}}</td>
+      </tr>
+      </tfoot>
+    </table>
+  </div>
+  <ngb-pagination class="d-flex justify-content-center font-weight-bold" [(page)]="page" [pageSize]="pageSize" [collectionSize]="characters.length"></ngb-pagination>
+</div>

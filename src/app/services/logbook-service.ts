@@ -8,7 +8,7 @@ import { BitacoraModel } from '../models/bitacora-model';
 })
 export class LogbookService {
   /**
-   * Ruta base del servicio de colonias.
+   * Ruta base del servicio de bitacora.
    */
   private bitacoraPath = environment.baseUrl + environment.bitacora;
 

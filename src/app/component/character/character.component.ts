@@ -1,14 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import { CharacterService } from 'src/app/services/character-service';
+import { CharacterModel } from "../../models/character-model";
 
 @Component({
   selector: 'app-character',
   templateUrl: './character.component.html',
-  styles: [
-  ]
+  styles: []
 })
 export class CharacterComponent implements OnInit {
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+  characters: CharacterModel[] = [];
+  pageSize = 10;
+  page: number = 1;
 
+  constructor(
+    private characterService: CharacterService
+  ) { }
+
+  ngOnInit(): void {
+    this.characterService.getCharacters().subscribe((response) => {
+      this.characters = response;
+    });
+  }
 }
