@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-md navbar-color navbar-absolute" th:fragment="navbar">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon">
+            <i class="fas fa-bars"></i>
+		</span>
+	</button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link text-white" [routerLink]="['menu/personajes']">Personajes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" [routerLink]="['menu/bitacora']">Bitacora</a>
+            </li>
+          </ul>
+        <div class="text-center">
+            <span class="navbar-text nav-title">Marvel comics</span>
+        </div>
+    </div>
+</nav>
