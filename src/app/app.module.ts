@@ -13,6 +13,7 @@ import { BitacoraComponent } from './component/bitacora/bitacora.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HttpInterceptorService } from './interceptors/HttpInterceptorService';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { InfoCharcaterComponent } from './component/info-charcater/info-charcater.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NavbarComponent,
     HomeComponent,
     CharacterComponent,
-    BitacoraComponent
+    BitacoraComponent,
+    InfoCharcaterComponent
   ],
   imports: [
     BrowserModule,

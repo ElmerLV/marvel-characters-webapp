@@ -9,6 +9,7 @@
         <th scope="col" class="text-center text-uppercase"></th>
         <th scope="col" class="text-center text-uppercase">Id</th>
         <th scope="col" class="text-center text-uppercase">Name</th>
+        <th scope="col" class="text-center text-uppercase"></th>
       </tr>
       </thead>
       <tbody>
@@ -18,8 +19,12 @@
       <tr *ngFor="let character of characters | slice: (page-1) * pageSize : page * pageSize" >
         <td class="text-center">
           <img src={{character.image}} width="50" height="50">
-        </td>        <td class="text-center">{{character.id}}</td>
+        </td>        
+        <td class="text-center">{{character.id}}</td>
         <td class="text-center">{{character.name}}</td>
+        <td class="text-center">
+          <span class="fas fa-info-circle text-info" (click)="view(character)"></span>
+        </td>
       </tr>
       </tbody>
       <tfoot>
